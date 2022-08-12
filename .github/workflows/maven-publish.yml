@@ -33,6 +33,7 @@ jobs:
           path: .mvn/wrapper/*.jar
 
   database_unit_tests:
+    name: Test Database
     needs: build
     runs-on: ubuntu-latest
     steps:
@@ -42,6 +43,7 @@ jobs:
         run: mvn --batch-mode -Dtest=DataBaseTests -DfailIfNoTests=false test
 
   unit_tests:
+    name: Tests Unitaire
     needs: build
     runs-on: ubuntu-latest
     steps:
@@ -51,6 +53,7 @@ jobs:
         run: mvn --batch-mode -Dtest=ProduitControllerUnitTest -DfailIfNoTests=false test
 
   integration_tests:
+    name: Tests d'Integration
     needs: build
     runs-on: ubuntu-latest
     steps:
@@ -71,7 +74,7 @@ jobs:
       - name: Run local k6 test
         uses: grafana/k6-action@v0.2.0
         with:
-          filename: test.js
+          filename: k6/script.js
           
     
  
