@@ -1,5 +1,6 @@
-package com.springboot.springbootproject.controllers;
+package com.springboot.springbootproject;
 
+import com.springboot.springbootproject.controllers.ProduitController;
 import com.springboot.springbootproject.model.Produit;
 import com.springboot.springbootproject.repos.ProduitRepository;
 import com.springboot.springbootproject.service.ProduitService;

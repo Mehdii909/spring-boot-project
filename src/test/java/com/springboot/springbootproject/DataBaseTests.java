@@ -1,4 +1,4 @@
-package com.springboot.springbootproject.controllers;
+package com.springboot.springbootproject;
 
 import com.springboot.springbootproject.model.Produit;
 import com.springboot.springbootproject.repos.ProduitRepository;
@@ -27,13 +27,13 @@ class DataBaseTests {
 
     @Test
     public void testFindProduit() {
-        Produit p = produitRepository.findById(77L).get();
+        Produit p = produitRepository.findById(76L).get();
         System.out.println(p);
     }
 
     @Test
     public void testUpdateProduit() {
-        Produit p = produitRepository.findById(77L).get();
+        Produit p = produitRepository.findById(76L).get();
         p.setPrixProduit(2000.0);
         p.setIdProduit(10L);
         produitRepository.save(p);
@@ -43,7 +43,7 @@ class DataBaseTests {
     @Test
     public void testDeleteProduit()
     {
-        produitRepository.deleteById(77L);
+        produitRepository.deleteById(76L);
     }
 
     @Test

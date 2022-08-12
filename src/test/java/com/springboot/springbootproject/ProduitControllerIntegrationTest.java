@@ -1,4 +1,4 @@
-package com.springboot.springbootproject.controllers;
+package com.springboot.springbootproject;
 
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.JsonProcessingException;
