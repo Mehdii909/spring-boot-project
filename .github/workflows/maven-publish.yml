@@ -32,7 +32,7 @@ jobs:
           name: github-action-artifact
           path: .mvn/wrapper/*.jar
 
-  Data_Base_Tests:
+  data_base_tests:
     needs: build
     runs-on: ubuntu-latest
     steps:
