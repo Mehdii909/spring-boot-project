@@ -32,14 +32,14 @@ jobs:
           name: github-action-artifact
           path: .mvn/wrapper/*.jar
 
-  data_base_tests:
+  unit_tests:
     needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
       - name: Test with Maven
-        run: mvn --batch-mode -Dtest=DataBaseTests -DfailIfNoTests=false test
+        run: mvn --batch-mode -Dtest=ProduitControllerUnitTest -DfailIfNoTests=false test
           
     
  
