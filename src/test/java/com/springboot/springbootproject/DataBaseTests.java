@@ -29,13 +29,13 @@ class DataBaseTests {
 
     @Test
     public void testFindProduit() {
-        Produit p = produitRepository.findById(76L).get();
+        Produit p = produitRepository.findById(1L).get();
         System.out.println(p);
     }
 
     @Test
     public void testUpdateProduit() {
-        Produit p = produitRepository.findById(76L).get();
+        Produit p = produitRepository.findById(1L).get();
         p.setPrixProduit(2000.0);
         p.setIdProduit(10L);
         produitRepository.save(p);
@@ -45,7 +45,7 @@ class DataBaseTests {
     @Test
     public void testDeleteProduit()
     {
-        produitRepository.deleteById(76L);
+        produitRepository.deleteById(1L);
     }
 
     @Test
