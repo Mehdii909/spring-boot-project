@@ -20,10 +20,12 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.context.annotation.Profile;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.mock.web.MockHttpServletResponse;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -53,7 +55,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @AutoConfigureMockMvc
-
+@ActiveProfiles("test")
 class ProduitControllerIntegrationTest {
     @Autowired
     WebApplicationContext webApplicationContext;
@@ -61,7 +63,7 @@ class ProduitControllerIntegrationTest {
     protected MockMvc mvc;
     @MockBean
     ProduitService produitService;
-
+    @Profile("test")
     @BeforeEach
     protected void setUp() {
         mvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
@@ -84,6 +86,7 @@ class ProduitControllerIntegrationTest {
         MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.get(uri)).andReturn();
         int status = mvcResult.getResponse().getStatus();
         assertEquals(200, status);
+
     }
 
     @Test
