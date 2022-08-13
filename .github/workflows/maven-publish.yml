@@ -84,7 +84,7 @@ jobs:
         #with:
          # filename: k6/script.js
   deploy:
-    needs: [database_unit_tests,database_unit_tests, unit_tests,unit_tests, integration_tests,integration_tests, performance_tests,performance_tests]
+    needs: [database_unit_tests, unit_tests, integration_tests, performance_tests]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
