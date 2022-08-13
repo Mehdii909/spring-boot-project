@@ -62,19 +62,27 @@ jobs:
       - name: Test with Maven
         run: mvn --batch-mode -Dtest=ProduitControllerIntegrationTest -DfailIfNoTests=false test
 
-  k6_load_test:
+  performance_tests:
+    name: Tests de performance
     needs: build
-    name: k6 Load Test
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout
-        uses: actions/checkout@v1
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Test with Maven
+        run: mvn --batch-mode -Dtest=ProduitControllerIntegrationTest -DfailIfNoTests=false test
+  #k6_load_test:
+  #  needs: build
+   # name: k6 Load Test
+    #runs-on: ubuntu-latest
+    #steps:
+     # - name: Checkout
+      #  uses: actions/checkout@v1
 
-      - name: Run local k6 test
-        uses: grafana/k6-action@v0.2.0
-        with:
-          filename: k6/script.js
+      #- name: Run local k6 test
+       # uses: grafana/k6-action@v0.2.0
+        #with:
+         # filename: k6/script.js
           
     
  

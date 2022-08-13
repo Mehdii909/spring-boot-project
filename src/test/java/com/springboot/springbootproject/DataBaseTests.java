@@ -2,7 +2,10 @@ package com.springboot.springbootproject;
 
 import com.springboot.springbootproject.model.Produit;
 import com.springboot.springbootproject.repos.ProduitRepository;
+import org.jsmart.zerocode.core.domain.TargetEnv;
 import org.junit.jupiter.api.Test;
+import org.junit.platform.suite.api.IncludeEngines;
+import org.junit.platform.suite.api.SelectPackages;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Profile;
@@ -12,6 +15,10 @@ import java.util.Date;
 import java.util.List;
 @ActiveProfiles("test")
 @SpringBootTest
+@IncludeEngines("junit-jupiter")
+@SelectPackages("org.jsmart.zerocode.samplesjunit5.loadjupiter")
+@TargetEnv("application-config.properties")
+
 class DataBaseTests {
 
     // database testing
