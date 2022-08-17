@@ -13,12 +13,13 @@ import org.springframework.test.context.ActiveProfiles;
 
 import java.util.Date;
 import java.util.List;
-@ActiveProfiles("test")
+
+
 @SpringBootTest
 @IncludeEngines("junit-jupiter")
 @SelectPackages("org.jsmart.zerocode.samplesjunit5.loadjupiter")
 @TargetEnv("application-config.properties")
-
+@ActiveProfiles("test")
 class DataBaseTests {
 
     // database testing
