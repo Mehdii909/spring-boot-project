@@ -95,11 +95,13 @@ jobs:
 
       - name: Build & push Docker image
         uses: mr-smithers-excellent/docker-build-push@v5
+        #uses: pennsignals/publish_docker-compose@v0.1.0
         with:
           image: mehdii909/spring-boot-image
           tags: latest
           registry: docker.io
           dockerfile: Dockerfile
+          #docker_compose: 'docker-compose.build.yml'
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_PASSWORD }}
 
